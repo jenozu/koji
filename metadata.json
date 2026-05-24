@@ -1,0 +1,6 @@
+{
+  "name": "Koji Shop — Dreamy Retro-Pastel & Anime Prints",
+  "description": "A minimalist retro-pastel, kawaii-pop anime art print e-commerce boutique featuring charming prints with solid pop-art shadows and hand-drawn line details.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

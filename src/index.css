@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&family=Quicksand:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --cream: #FDFBF7;
+  --mint: #82D1C1;
+  --mint-dark: #59C1AF;
+  --pink: #FFB3C1;
+  --pink-dark: #FF8097;
+  --charcoal: #2B2D31;
+}
+
+[data-theme="pastel-magic"] {
+  --cream: #E3F0FF; /* Soft pastel light blue replaces the yellowish cream */
+  --mint: #D5C9FF; /* Under pastel theme, replace green mint button with light pastel purple/lavender */
+  --mint-dark: #BCA9FF; /* Hover/accent pastel purple/lavender */
+  --pink: #FFB3C1;
+  --pink-dark: #FF8097;
+  --charcoal: #2B2D31;
+}
+
+@theme {
+  --font-sans: "Quicksand", "Comfortaa", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Comfortaa", "Quicksand", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-cream: var(--cream);
+  --color-mint: var(--mint);
+  --color-mint-dark: var(--mint-dark);
+  --color-pink: var(--pink);
+  --color-pink-dark: var(--pink-dark);
+  --color-charcoal: var(--charcoal);
+}
+
+/* Custom styles for retro pop-art feel */
+body {
+  background-color: #FDFBF7;
+  color: #2B2D31;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar for Kawaii feel */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FDFBF7;
+  border-left: 2px solid #2B2D31;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FFB3C1;
+  border: 2px solid #2B2D31;
+  border-radius: 99px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #82D1C1;
+}
+
+/* Custom classes for grid borders & panel vibes */
+.comic-border {
+  border: 2px solid #2B2D31;
+}
+
+.thin-comic-border {
+  border: 1px solid #2B2D31;
+}
+
+/* Hard Pop-Art Shadows */
+.hard-shadow-pink {
+  box-shadow: 4px 4px 0px 0px #FFB3C1;
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+}
+.hard-shadow-pink:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px #FFB3C1;
+}
+.hard-shadow-pink:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px 0px #FFB3C1;
+}
+
+.hard-shadow-mint {
+  box-shadow: 4px 4px 0px 0px #82D1C1;
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+}
+.hard-shadow-mint:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px #82D1C1;
+}
+.hard-shadow-mint:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px 0px #82D1C1;
+}
+
+.hard-shadow-charcoal {
+  box-shadow: 4px 4px 0px 0px #2B2D31;
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+}
+.hard-shadow-charcoal:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px #2B2D31;
+}
+.hard-shadow-charcoal:active {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0px 0px #2B2D31;
+}
+
+/* Soft grid background */
+.grid-bg {
+  background-size: 20px 20px;
+  background-image: 
+    linear-gradient(to right, rgba(43, 45, 49, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(43, 45, 49, 0.04) 1px, transparent 1px);
+}
+
+.cherry-blossom {
+  pointer-events: none;
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: #FFB3C1;
+  border-radius: 150px 10px 150px 150px;
+  opacity: 0.6;
+  animation: fall 12s linear infinite, sway 4s ease-in-out infinite alternate;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-50px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  90% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(500px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes sway {
+  0% {
+    margin-left: -30px;
+  }
+  100% {
+    margin-left: 30px;
+  }
+}
+
+/* --- PASTEL-MAGIC THEME CUSTOM OVERRIDES --- */
+
+/* Replace green buttons / mint (#82D1C1) with pastel purple / light lavender */
+[data-theme="pastel-magic"] .bg-\[\#82D1C1\] {
+  background-color: #D5C9FF !important;
+}
+[data-theme="pastel-magic"] .bg-\[\#82D1C1\]\/10 {
+  background-color: rgba(213, 201, 255, 0.1) !important;
+}
+[data-theme="pastel-magic"] .bg-\[\#82D1C1\]\/20 {
+  background-color: rgba(213, 201, 255, 0.2) !important;
+}
+[data-theme="pastel-magic"] .hover\:bg-\[\#59C1AF\]:hover {
+  background-color: #BCA9FF !important;
+}
+[data-theme="pastel-magic"] .disabled\:bg-\[\#82D1C1\]\/50:disabled {
+  background-color: rgba(213, 201, 255, 0.5) !important;
+}
+[data-theme="pastel-magic"] .text-\[\#82D1C1\] {
+  color: #BCA9FF !important;
+}
+[data-theme="pastel-magic"] .text-\[\#FF8097\] {
+  color: #FF8097 !important;
+}
+[data-theme="pastel-magic"] .hover\:text-\[\#82D1C1\]:hover {
+  color: #BCA9FF !important;
+}
+[data-theme="pastel-magic"] .border-\[\#82D1C1\] {
+  border-color: #D5C9FF !important;
+}
+[data-theme="pastel-magic"] .border-\[\#82D1C1\]\/50 {
+  border-color: rgba(213, 201, 255, 0.5) !important;
+}
+[data-theme="pastel-magic"] .focus\:border-\[\#82D1C1\]:focus {
+  border-color: #D5C9FF !important;
+}
+[data-theme="pastel-magic"] .focus\:ring-\[\#82D1C1\]:focus {
+  --tw-ring-color: #D5C9FF !important;
+  border-color: #D5C9FF !important;
+}
+
+/* Override hard-shadow-mint */
+[data-theme="pastel-magic"] .hard-shadow-mint {
+  box-shadow: 4px 4px 0px 0px #D5C9FF !important;
+}
+[data-theme="pastel-magic"] .hard-shadow-mint:hover {
+  box-shadow: 6px 6px 0px 0px #D5C9FF !important;
+}
+[data-theme="pastel-magic"] .hard-shadow-mint:active {
+  box-shadow: 2px 2px 0px 0px #D5C9FF !important;
+}
+
+/* Custom shadow overrides for hardcoded shadow-mint or shadow-charcoal under active theme */
+[data-theme="pastel-magic"] .shadow-\[4px_4px_0px_0px_\#82D1C1\] {
+  box-shadow: 4px 4px 0px 0px #D5C9FF !important;
+}
+[data-theme="pastel-magic"] .shadow-\[3px_3px_0px_0px_\#2B2D31\] {
+  box-shadow: 3px 3px 0px 0px #2B2D31 !important;
+}
+[data-theme="pastel-magic"] .shadow-\[3.5px_3.5px_0px_0px_\#2B2D31\] {
+  box-shadow: 3.5px 3.5px 0px 0px #2B2D31 !important;
+}
+[data-theme="pastel-magic"] .shadow-\[3px_3px_0px_0px_\#82D1C1\] {
+  box-shadow: 3px 3px 0px 0px #D5C9FF !important;
+}
+[data-theme="pastel-magic"] .shadow-\[2.5px_2.5px_0px_0px_\#82D1C1\] {
+  box-shadow: 2.5px 2.5px 0px 0px #D5C9FF !important;
+}
+[data-theme="pastel-magic"] .shadow-\[4px_4px_0px_0px_\#FFB3C1\] {
+  box-shadow: 4px 4px 0px 0px #FFB3C1 !important;
+}
+[data-theme="pastel-magic"] .hover\:shadow-\[8px_8px_0px_0px_\#FFB3C1\]:hover {
+  box-shadow: 8px 8px 0px 0px #FFB3C1 !important;
+}
+[data-theme="pastel-magic"] .bg-amber-50 {
+  background-color: #E2E8F0 !important; /* Elegant light blue/slate walls */
+}
+
+/* --- Replace yellow with pale blue --- */
+/* Replace hardcoded yellow colors #FFEAA7 and #FFEBB3 with pale blue (#D2E4FF) */
+[data-theme="pastel-magic"] .bg-\[\#FFEAA7\] {
+  background-color: #D2E4FF !important;
+}
+[data-theme="pastel-magic"] .bg-\[\#FFEBB3\] {
+  background-color: #D2E4FF !important;
+}
+[data-theme="pastel-magic"] .bg-\[\#FFF3E0\]\/20 {
+  background-color: rgba(210, 228, 255, 0.2) !important;
+}
+[data-theme="pastel-magic"] .shadow-\[1.5px_1.5px_0px_0px_\#FFEAA7\] {
+  box-shadow: 1.5px 1.5px 0px 0px #D2E4FF !important;
+}
+[data-theme="pastel-magic"] ::-webkit-scrollbar-thumb:hover {
+  background: #D5C9FF !important;
+}
+
+[data-theme="pastel-magic"] body {
+  background-color: var(--cream) !important;
+}
+[data-theme="pastel-magic"] .bg-\[\#FDFBF7\] {
+  background-color: var(--cream) !important;
+}
+[data-theme="pastel-magic"] .bg-\[\#FDFBF7\]\/95 {
+  background-color: rgba(227, 240, 255, 0.95) !important;
+}
+[data-theme="pastel-magic"] .bg-cream {
+  background-color: var(--cream) !important;
+}
+[data-theme="pastel-magic"] ::-webkit-scrollbar-track {
+  background-color: var(--cream) !important;
+}
+
